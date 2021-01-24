@@ -16,6 +16,7 @@ RUN apt-get update \
     curl \
     net-tools \
     vim-tiny \
+    apt-utils\
     # install python3.6
     python3.6-dev \
     python3-tk \
@@ -42,6 +43,17 @@ cmake \
 zlib1g-dev \
 swig \
 && pip3 install gym
+
+# install stable-baselines and PyBullet
+RUN apt-get update \
+&& apt-get install -y \
+libopenmpi-dev \
+&& pip install stable-baselines[mpi] \
+tensorflow==1.14.0 \
+pyqt5 \
+imageio
+
+RUN pip install pybullet
 
 # clean up cache
 RUN apt-get clean \  

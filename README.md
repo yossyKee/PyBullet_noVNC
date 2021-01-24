@@ -1,14 +1,15 @@
-# OpenAIGym_noVNC   
-Visual Studio CODEを用いて、コマンドベースでgym環境を動かし、動作の様子をブラウザで確認するために作りました。  
+# Pybullet_noVNC   
+Visual Studio CODEを用いて、コマンドベースでPyBullet環境を動かし、動作の様子をブラウザで確認するために作りました。  
 
 ## 機能
 - sshでコンテナ（Ubuntu18.4)に接続しOpenAIGymを動作させ、GUIをnoVNCを使ってブラウザで表示させることができます。
+- OpenAIGym・stabale-baselines・PyBulletがインストール済です
 - `root`と`user`の2つのユーザーが設定されます。  
 - `run.sh`でローカルのとコンテナ上のボリュームを共有する設定ができます。  
 
 # Build
 ```bash:build.sh
-docker build --build-arg ROOT_PASSWORD=password -t gym_container:dev .
+docker build --build-arg ROOT_PASSWORD=password -t pybullet_container:dev .
 ```  
 
 `ROOT_PASSWORD`にssh接続時に使用するパスワードを設定してください。  

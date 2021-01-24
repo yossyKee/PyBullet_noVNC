@@ -1,1 +1,1 @@
-docker build --build-arg ROOT_PASSWORD=password -t gym_container:dev .
+docker build --build-arg ROOT_PASSWORD=password -t pybullet_container:dev .
